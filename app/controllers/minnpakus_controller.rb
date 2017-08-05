@@ -14,6 +14,7 @@ class MinnpakusController < ApplicationController
     @reviews = @minnpaku.reviews.all
     @review = @minnpaku.reviews.build
     @review_ave = @reviews.average(:hyouka)
+    @local_infos = @minnpaku.local_infos
   end
 
   # GET /minnpakus/new

@@ -64,6 +64,10 @@
   <%= @minnpaku.longitude %>
 </p>
 
+<% @local_infos.each do |local_info| %>
+<%= local_info.name %>
+<% end %>
+
 <div>
   <% @reviews.each do |review| %>
     <div>

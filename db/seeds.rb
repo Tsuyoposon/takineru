@@ -198,3 +198,19 @@ LocalInfo.create(
 :body => "ファミリーのハイキングも楽しいです。",
 :image => Rails.root.join("db/fixtures/local_10.jpg").open
 )
+MinnpakuLocalInfo.create(
+:id => 1,
+:minnpaku_id => 1,
+:local_info_id =>1
+)
+MinnpakuLocalInfo.create(
+:id => 2,
+:minnpaku_id => 1,
+:local_info_id =>2
+)
+
+MinnpakuLocalInfo.create(
+:id => 3,
+:minnpaku_id => 1,
+:local_info_id =>3
+)
