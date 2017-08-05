@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network 'forwarded_port', guest: 3000, host: 3000
 
-  config.vm.synced_folder './', '/home/practice/'
+  config.vm.synced_folder './', '/home/takineru/'
 
   config.vm.provider 'virtualbox' do |vb|
     # Customize the amount of memory on the VM:
