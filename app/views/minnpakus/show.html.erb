@@ -29,6 +29,7 @@
   <% @reviews.each do |review| %>
     <div>
       <p><%= review.body %></p>
+      <p><%= review.hyouka %></p>
     </div>
   <% end %>
     <%= render 'reviews/form' , review: @review%>

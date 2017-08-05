@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805085947) do
+ActiveRecord::Schema.define(version: 20170805121243) do
 
   create_table "jimotalks", force: :cascade do |t|
     t.integer "local_info_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hyouka"
   end
 
   create_table "local_infos", force: :cascade do |t|
@@ -37,6 +38,13 @@ ActiveRecord::Schema.define(version: 20170805085947) do
     t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.integer "performance"
+    t.boolean "smoke"
+    t.string "style"
+    t.text "provide"
+    t.text "pplease"
+    t.decimal "review"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170805085947) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hyouka"
   end
 
 end

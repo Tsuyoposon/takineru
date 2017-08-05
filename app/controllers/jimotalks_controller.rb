@@ -69,6 +69,6 @@ class JimotalksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jimotalk_params
-      params.require(:jimotalk).permit(:local_info_id, :body)
+      params.require(:jimotalk).permit(:local_info_id, :body, :hyouka)
     end
 end

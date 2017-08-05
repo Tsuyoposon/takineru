@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :local_info_id %>
-    <%= form.number_field :local_info_id, id: :jimotalk_local_info_id %>
-  </div>
+  <%= form.hidden_field :local_info_id %>
 
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body, id: :jimotalk_body %>
+  </div>
+
+  <div>
+    <%= form.label :hyouka %>
+    <%= form.number_field :hyouka, id: :jimotalk_hyouka %>
   </div>
 
   <div class="actions">

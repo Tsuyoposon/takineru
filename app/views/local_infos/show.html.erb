@@ -27,9 +27,10 @@
 
 <div>
   <% @jimotalks.each do |jimotalk| %>
-    <div>
-      <p><%= jimotalk.body %></p>
-    </div>
+  <div>
+    <p><%= jimotalk.body %></p>
+    <p><%= jimotalk.hyouka %></p>
+  </div>
   <% end %>
     <%= render 'jimotalks/form' , jimotalk: @jimotalk %>
 </div>
