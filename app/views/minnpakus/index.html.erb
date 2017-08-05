@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Minnpakus</h1>
-
+<div class="col-md-6">
 <table>
   <thead>
     <tr>
@@ -29,7 +29,37 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Minnpaku', new_minnpaku_path %>
+</div>
+
+<div class="col-md-6">
+<div id="map"></div>
+<style type="text/css">
+  #map { height:700px; width: 600px}
+  .leaflet-marker-icon-color-gray  { -webkit-filter: grayscale(100%); filter: grayscale(100%); }
+  .leaflet-marker-icon-color-blue  { -webkit-filter: hue-rotate(-270deg); filter: hue-rotate(-9deg); }
+</style>
+<script type="text/javascript">
+    L.Icon.Default.imagePath = "/assets";
+    var map = L.map('map').setView([39.778707, 141.108164],11.5);
+    var osmUrl = "http://tile.openstreetmap.jp/{z}/{x}/{y}.png";
+    var osmAttrib = "Map data &COPY; OpenStreetMap contributors";
+    L.tileLayer(osmUrl, {
+        attribution: osmAttrib,
+        maxZoom: 13,
+    }).addTo(map);
+
+</script>
+<% @minnpakus.each do |shop| %>
+    <script type="text/javascript">
+        var popup = L.popup().setContent('<div class="map-title"><%= shop.name %></div><%= image_tag(shop.image,:size => "86×86", :class => "map-img", :alt => "") %><p style="width: 200px;"></p><%= button_to "民泊詳細へ", minnpaku_path(shop.id), :method => :get , :class => "btn btn-info btn-xs" %>');
+        var marker = L.marker(
+            [<%= shop.latitude %>,<%= shop.longitude %>],
+            { name: map.name }
+        ).addTo(map).bindPopup(popup);
+          L.DomUtil.addClass( marker._icon, "leaflet-marker-icon-color-blue")
+    </script>
+<% end %>
+</div>
