@@ -72,6 +72,6 @@ class LocalInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def local_info_params
-      params.require(:local_info).permit(:name, :body, :image, :latitude, :longitude)
+      params.require(:local_info).permit(:name, :body, :image, :latitude, :longitude, :user_name)
     end
 end

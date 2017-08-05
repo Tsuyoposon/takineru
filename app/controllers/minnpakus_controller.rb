@@ -13,6 +13,7 @@ class MinnpakusController < ApplicationController
     @minnpaku = Minnpaku.find(params[:id])
     @reviews = @minnpaku.reviews.all
     @review = @minnpaku.reviews.build
+    @review_ave = @reviews.average(:hyouka)
   end
 
   # GET /minnpakus/new
@@ -72,6 +73,7 @@ class MinnpakusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def minnpaku_params
-      params.require(:minnpaku).permit(:name, :body, :image, :latitude, :longitude)
+      params.require(:minnpaku).permit(:name, :body, :image, :price, :performance, :smoke,
+      :style, :provide, :please, :review, :latitude, :longitude)
     end
 end

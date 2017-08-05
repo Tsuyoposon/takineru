@@ -12,7 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :title %>
+    <%= form.text_field :name, id: :local_info_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_name %>
     <%= form.text_field :name, id: :local_info_name %>
   </div>
 
@@ -26,15 +31,6 @@
     <%= form.file_field :image, id: :local_info_body %>
   </div>
 
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :local_info_latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :local_info_longitude %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

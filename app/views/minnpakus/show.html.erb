@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Place_Name:</strong>
   <%= @minnpaku.name %>
 </p>
 
@@ -13,6 +13,45 @@
 <p>
   <strong>Image:</strong>
   <%= image_tag(@minnpaku.image, :class => "card-img-show", :alt => "") %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @minnpaku.price %>
+</p>
+
+<p>
+  <strong>Performance:</strong>
+  <%= @minnpaku.performance %>
+</p>
+
+<p>
+  <strong>Smoke:</strong>
+  <% if @minnpaku.smoke == true then%>
+  喫煙
+  <% else %>
+  禁煙
+  <% end %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @minnpaku.style %>
+</p>
+
+<p>
+  <strong>Provide:</strong>
+  <%= @minnpaku.provide %>
+</p>
+
+<p>
+  <strong>Please:</strong>
+  <%= @minnpaku.latitude %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @review_ave %>
 </p>
 
 <p>

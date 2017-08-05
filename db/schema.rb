@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170805121243) do
     t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
   end
 
   create_table "minnpakus", force: :cascade do |t|
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170805121243) do
     t.boolean "smoke"
     t.string "style"
     t.text "provide"
-    t.text "pplease"
+    t.text "please"
     t.decimal "review"
   end
 
