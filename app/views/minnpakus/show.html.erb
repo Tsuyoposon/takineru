@@ -1,82 +1,96 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="font-size: 22px; mergin-bottom: 20px;">
   <strong>Place_Name:</strong>
   <%= @minnpaku.name %>
 </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <p>
+        <strong>Image:</strong>
+        <%= image_tag(@minnpaku.image, :class => "card-img-show", :alt => "") %>
+      </p>
+    </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @minnpaku.body %>
-</p>
+    <div class="col-md-4" style="padding: 20px 0px 20px 0px;">
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Price:</strong>
+        <%= @minnpaku.price %>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@minnpaku.image, :class => "card-img-show", :alt => "") %>
-</p>
+      <p style="font-size: 17px;; margin: 10px 0px">
+        <strong>Performance:</strong>
+        <%= @minnpaku.performance %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @minnpaku.price %>
-</p>
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Smoke:</strong>
+        <% if @minnpaku.smoke == true then%>
+        喫煙
+        <% else %>
+        禁煙
+        <% end %>
+      </p>
 
-<p>
-  <strong>Performance:</strong>
-  <%= @minnpaku.performance %>
-</p>
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Style:</strong>
+        <%= @minnpaku.style %>
+      </p>
 
-<p>
-  <strong>Smoke:</strong>
-  <% if @minnpaku.smoke == true then%>
-  喫煙
-  <% else %>
-  禁煙
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Provide:</strong>
+        <%= @minnpaku.provide %>
+      </p>
+
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Please:</strong>
+        <%= @minnpaku.please %>
+      </p>
+
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Review:</strong>
+        <%= @review_ave %>
+      </p>
+
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Latitude:</strong>
+        <%= @minnpaku.latitude %>
+      </p>
+
+      <p style="font-size: 17px; margin: 10px 0px">
+        <strong>Longitude:</strong>
+        <%= @minnpaku.longitude %>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+<div class="col-md-4">
+  <% @reviews.each do |review| %>
+  <div>
+    <p><%= review.body %></p>
+    <p><%= review.hyouka %></p>
+  </div>
   <% end %>
-</p>
+  <%= render 'reviews/form' , review: @review%>
+</div>
 
-<p>
-  <strong>Style:</strong>
-  <%= @minnpaku.style %>
-</p>
-
-<p>
-  <strong>Provide:</strong>
-  <%= @minnpaku.provide %>
-</p>
-
-<p>
-  <strong>Please:</strong>
-  <%= @minnpaku.latitude %>
-</p>
-
-<p>
-  <strong>Review:</strong>
-  <%= @review_ave %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @minnpaku.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @minnpaku.longitude %>
-</p>
-
+</div>
+</div>
 <% @local_infos.each do |local_info| %>
-<%= local_info.name %>
+<div class="col-md-4">
+  <%= local_info.name %>
+  <%= link_to(local_info, :style => "text-decoration:none;") do %>
+  <%= image_tag(local_info.image, :class => "map-img", :alt => "") %>
+  <% end %>
+</div>
 <% end %>
 
-<div>
-  <% @reviews.each do |review| %>
-    <div>
-      <p><%= review.body %></p>
-      <p><%= review.hyouka %></p>
-    </div>
-  <% end %>
-    <%= render 'reviews/form' , review: @review%>
-</div>
+
 
 <%= link_to 'Edit', edit_minnpaku_path(@minnpaku) %> |
 <%= link_to 'Back', minnpakus_path %>

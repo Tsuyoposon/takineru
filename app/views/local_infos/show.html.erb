@@ -7,7 +7,7 @@
 
 <p>
   <strong>User_name:</strong>
-  <%= @local_info.latitude %>
+  <%= @local_info.user_name %>
 </p>
 
 <p>
@@ -31,3 +31,16 @@
 </div>
 <%= link_to 'Edit', edit_local_info_path(@local_info) %> |
 <%= link_to 'Back', local_infos_path %>
+
+<div class="container">
+  <div class="row">
+    <% @minnpakus.each do |minnpaku| %>
+    <div class="col-md-4">
+      <%= minnpaku.name %>
+      <%= link_to(minnpaku, :style => "text-decoration:none;") do %>
+      <%= image_tag(minnpaku.image, :class => "map-img", :alt => "") %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

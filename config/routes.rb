@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tutorial/index'
+
+  get 'tutorial/show'
+
   resources :jimotalks
   resources :reviews
   resources :local_infos

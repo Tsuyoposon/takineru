@@ -13,6 +13,8 @@ class LocalInfosController < ApplicationController
     @local_info = LocalInfo.find(params[:id])
     @jimotalks = @local_info.jimotalks.all
     @jimotalk = @local_info.jimotalks.build
+    @jimotalk_ave = @jimotalks.average(:hyouka)
+    @minnpakus = @local_info.minnpakus
   end
 
   # GET /local_infos/new
