@@ -1,7 +1,7 @@
 class TutorialController < ApplicationController
-  def index
+  def setumei
   end
 
-  def show
+  def sonota
   end
 end

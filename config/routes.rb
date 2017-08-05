@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'tutorial/index'
+  get 'tutorial/setumei'
 
-  get 'tutorial/show'
+  get 'tutorial/sonota'
 
   resources :jimotalks
   resources :reviews
