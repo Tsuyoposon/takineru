@@ -18,6 +18,7 @@ http://qiita.com/syachihoko/items/ea70ad95104c4782b6ee#-b-0000について
 ### (追記)
 - pg
 - herokuコマンドラインツール
+- ImageMagick
 
 # 初めて起動するとき
 ## 必要なもの
@@ -33,6 +34,9 @@ http://qiita.com/syachihoko/items/ea70ad95104c4782b6ee#-b-0000について
 - sudo yum install vim
 - sudo yum install gcc-c++
 - sudo yum -y install postgresql-devel
+- yum -y install ImageMagick
+- yum -y install ImageMagick-devel
+
 - cd ../takineru
 - bundle install
 - rake db:migrate
