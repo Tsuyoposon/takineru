@@ -1,0 +1,2 @@
+class Minnpaku < ApplicationRecord
+end

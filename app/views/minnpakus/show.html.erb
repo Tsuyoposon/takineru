@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @minnpaku.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @minnpaku.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @minnpaku.image %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @minnpaku.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @minnpaku.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_minnpaku_path(@minnpaku) %> |
+<%= link_to 'Back', minnpakus_path %>

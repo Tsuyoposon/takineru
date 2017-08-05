@@ -1,0 +1,2 @@
+class LocalInfo < ApplicationRecord
+end

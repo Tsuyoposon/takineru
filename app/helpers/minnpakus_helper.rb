@@ -1,0 +1,2 @@
+module MinnpakusHelper
+end
