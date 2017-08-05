@@ -25,5 +25,14 @@
   <%= @minnpaku.longitude %>
 </p>
 
+<div>
+  <% @reviews.each do |review| %>
+    <div>
+      <p><%= review.body %></p>
+    </div>
+  <% end %>
+    <%= render 'reviews/form' , review: @review%>
+</div>
+
 <%= link_to 'Edit', edit_minnpaku_path(@minnpaku) %> |
 <%= link_to 'Back', minnpakus_path %>

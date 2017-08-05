@@ -10,6 +10,9 @@ class MinnpakusController < ApplicationController
   # GET /minnpakus/1
   # GET /minnpakus/1.json
   def show
+    @minnpaku = Minnpaku.find(params[:id])
+    @reviews = @minnpaku.reviews.all
+    @review = @minnpaku.reviews.build
   end
 
   # GET /minnpakus/new

@@ -1,0 +1,27 @@
+<%= form_with(model: jimotalk, local: true) do |form| %>
+  <% if jimotalk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(jimotalk.errors.count, "error") %> prohibited this jimotalk from being saved:</h2>
+
+      <ul>
+      <% jimotalk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :local_info_id %>
+    <%= form.number_field :local_info_id, id: :jimotalk_local_info_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :jimotalk_body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

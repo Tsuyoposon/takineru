@@ -10,6 +10,9 @@ class LocalInfosController < ApplicationController
   # GET /local_infos/1
   # GET /local_infos/1.json
   def show
+    @local_info = LocalInfo.find(params[:id])
+    @jimotalks = @local_info.jimotalks.all
+    @jimotalk = @local_info.jimotalks.build
   end
 
   # GET /local_infos/new

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jimotalks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local info</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jimotalks.each do |jimotalk| %>
+      <tr>
+        <td><%= jimotalk.local_info_id %></td>
+        <td><%= jimotalk.body %></td>
+        <td><%= link_to 'Show', jimotalk %></td>
+        <td><%= link_to 'Edit', edit_jimotalk_path(jimotalk) %></td>
+        <td><%= link_to 'Destroy', jimotalk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jimotalk', new_jimotalk_path %>

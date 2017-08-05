@@ -25,5 +25,13 @@
   <%= @local_info.longitude %>
 </p>
 
+<div>
+  <% @jimotalks.each do |jimotalk| %>
+    <div>
+      <p><%= jimotalk.body %></p>
+    </div>
+  <% end %>
+    <%= render 'jimotalks/form' , jimotalk: @jimotalk %>
+</div>
 <%= link_to 'Edit', edit_local_info_path(@local_info) %> |
 <%= link_to 'Back', local_infos_path %>
