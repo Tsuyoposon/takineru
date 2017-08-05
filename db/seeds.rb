@@ -208,9 +208,73 @@ MinnpakuLocalInfo.create(
 :minnpaku_id => 1,
 :local_info_id =>2
 )
-
 MinnpakuLocalInfo.create(
 :id => 3,
 :minnpaku_id => 1,
 :local_info_id =>3
+)
+MinnpakuLocalInfo.create(
+:id => 4,
+:minnpaku_id => 2,
+:local_info_id =>5
+)
+MinnpakuLocalInfo.create(
+:id => 5,
+:minnpaku_id => 2,
+:local_info_id =>8
+)
+MinnpakuLocalInfo.create(
+:id => 6,
+:minnpaku_id => 3,
+:local_info_id =>5
+)
+MinnpakuLocalInfo.create(
+:id => 7,
+:minnpaku_id => 3,
+:local_info_id =>8
+)
+MinnpakuLocalInfo.create(
+:id => 8,
+:minnpaku_id => 4,
+:local_info_id =>10
+)
+MinnpakuLocalInfo.create(
+:id => 9,
+:minnpaku_id => 5,
+:local_info_id =>3
+)
+MinnpakuLocalInfo.create(
+:id => 10,
+:minnpaku_id => 6,
+:local_info_id =>2
+)
+MinnpakuLocalInfo.create(
+:id => 11,
+:minnpaku_id => 7,
+:local_info_id =>7
+)
+MinnpakuLocalInfo.create(
+:id => 12,
+:minnpaku_id => 8,
+:local_info_id =>4
+)
+MinnpakuLocalInfo.create(
+:id => 13,
+:minnpaku_id => 8,
+:local_info_id =>5
+)
+MinnpakuLocalInfo.create(
+:id => 14,
+:minnpaku_id => 9,
+:local_info_id =>2
+)
+MinnpakuLocalInfo.create(
+:id => 15,
+:minnpaku_id => 10,
+:local_info_id =>1
+)
+MinnpakuLocalInfo.create(
+:id => 16,
+:minnpaku_id => 10,
+:local_info_id =>6
 )
