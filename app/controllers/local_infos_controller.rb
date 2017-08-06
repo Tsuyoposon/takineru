@@ -5,6 +5,8 @@ class LocalInfosController < ApplicationController
   # GET /local_infos.json
   def index
     @local_infos = LocalInfo.all
+
+    @local_info_short = LocalInfo.order("RANDOM()").limit(6)
   end
 
   # GET /local_infos/1

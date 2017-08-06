@@ -1,28 +1,45 @@
 
-<h1>Local Infos</h1>
+  <ul class="list-inline" align = "left" >
+<li><h1><%= image_tag("/uploads/title/20668866_1045676175568382_2083027003_n.jpg", :style => "width: 250px;") %></h1></li>
+<li style="font-size: 17px;">ああああああああああああああああああああああ</li>
+  </ul>
+<div class="col-md-7">
 
-<% @local_infos.each_slice(3) do |local_infos| %>
+  <% @local_infos.each do |local_info| %>
+  <%= link_to(local_info, :style => "text-decoration:none;") do %>
+  <ul class="list-inline" align = "left" >
+    <li><%= image_tag(local_info.image, :class => "card-img-show", :style => "width: 100px;display: inline-block;", :alt => "") %></li>
+    <li style="font-size: 22px; font-weight: bold;"><%= local_info.name %></li>
+  </ul>
+  <p><%= local_info.body %></p>
+  <% end %>
+  <div style="border-bottom: 2px solid #D7D8D8; margin: 3px 0px 6px 0px; border-radius: 5px 5px 5px 5px;"></div>
+  <% end %>
+</div>
+
+<div class="col-md-5">
+  <form class="navbar-form" role="search" style="text-align: right;">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search this site">
+    </div>
+    <button type="submit" class="btn btn-default": auto;>search</button>
+  </form>
+    <div style="border-bottom: 5px solid #D7D8D8; margin: 3px 0px 6px 0px; border-radius: 5px 5px 5px 5px; margin-bottom: 30px;"></div>
+    <h3 style="font-weight: bold;">おすすめスポット</h3>
+<% @local_info_short.each_slice(2) do |local_infos| %>
 <!-- 列 -->
 <ul class="frex">
-  <!-- カード -->
   <% local_infos.each do |local_info| %>
+  <!-- カード -->
   <%= link_to(local_info, :style => "text-decoration:none;") do %>
-  <section class="card">
-    <%= image_tag(local_info.image, :class => "card-img", :alt => "") %>
-    <div class="card-content">
-
-        <h1 class="card-title"><%= local_info.name %></h1>
-        <p class="card-text mojiseigenn"><%= local_info.body %></p>
-      </div>
-
-
+  <section class="card" style="width: 180px; ">
+    <%= image_tag(local_info.image, :class => "card-img", :alt => "", :style => "") %>
   </section>
+  <strong><%= local_info.name %></strong>
   <% end %>
   <!-- カード -->
   <% end %>
 </ul>
 <!-- 列 -->
 <% end %>
-
-
-<%= link_to 'New Local Info', new_local_info_path %>
+</div>
