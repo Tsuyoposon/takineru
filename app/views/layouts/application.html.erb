@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <style type="text/css">
   body {
-    <% if  params[:q].present?%>
+    <% if @tutorial_flag.present? then %>
     padding-top: 400px;
     <% elsif %>
     padding-top: 80px;
@@ -70,11 +70,11 @@
           <ul class="nav navbar-nav">
             <li><%= link_to  "民宿ページ",minnpakus_path, :class => "link_class"%></li>
             <li><%= link_to  "じもとーく", local_infos_path, :class => "link_class" %></li>
-            <li><%= link_to  "チュートリアル", tutorial_setumei_path(q: '1'), :class => "link_class" %></li>
+            <li><%= link_to  "チュートリアル", tutorial_setumei_path, :class => "link_class" %></li>
             <li><%= link_to  "お問い合わせ", root_path, :class => "link_class" %></li>
           </ul>
         </div>
-        <% if  params[:q].present?%>
+        <% if @tutorial_flag.present? then %>
         <div style="text-align: center; padding: 20px;font-size: 25px;">
           <%= image_tag("/uploads/title/takineru-aikion.png", :style => "width: 300px;") %>とは?
         </div>
@@ -83,9 +83,18 @@
     </nav>
   </div>
 </header>
+<style type="text/css">
+body {
+  <% if @tutorial_flag.present? then %>
+  padding-top: 400px;
+  <% elsif %>
+  padding-top: 80px;
+  <% end %>
+}
+</style>
 <body>
   <div class="container main-container" style="font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;">
-  <%= yield %>
-</div>
+    <%= yield %>
+  </div>
 </body>
 </html>

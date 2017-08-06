@@ -7,7 +7,7 @@
   <%= link_to(minnpaku, :style => "text-decoration:none;") do %>
   <ul class="list-inline" align = "left" >
     <li><%= image_tag(minnpaku.image, :class => "card-img-show", :style => "width: 100px;display: inline-block;", :alt => "") %></li>
-    <li style="font-size: 22px; font-weight: bold;">【友達募集！！】<%= minnpaku.name %></li>
+    <li style="font-size: 22px; font-weight: bold;">【<%= minnpaku.body %>】<%= minnpaku.name %></li>
   </ul>
   <p><%= minnpaku.please %></p>
   <% end %>
