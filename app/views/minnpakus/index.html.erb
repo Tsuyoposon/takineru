@@ -1,43 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Minnpakus</h1>
+<h1><%= image_tag("/uploads/title/20663551_1045676178901715_51522057_o.jpg", :style => "width: 250px;") %></h1>
 <div class="col-md-6">
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @minnpakus.each do |minnpaku| %>
-      <tr>
-        <td><%= minnpaku.name %></td>
-        <td><%= minnpaku.body %></td>
-        <td><%= minnpaku.image %></td>
-        <td><%= minnpaku.latitude %></td>
-        <td><%= minnpaku.longitude %></td>
-        <td><%= link_to 'Show', minnpaku %></td>
-        <td><%= link_to 'Edit', edit_minnpaku_path(minnpaku) %></td>
-        <td><%= link_to 'Destroy', minnpaku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<%= link_to 'New Minnpaku', new_minnpaku_path %>
+  <% @minnpakus.each do |minnpaku| %>
+  <%= link_to(minnpaku, :style => "text-decoration:none;") do %>
+  <ul class="list-inline" align = "left" >
+    <li><%= image_tag(minnpaku.image, :class => "card-img-show", :style => "width: 100px;display: inline-block;", :alt => "") %></li>
+    <li style="font-size: 22px; font-weight: bold;">【友達募集！！】<%= minnpaku.name %></li>
+  </ul>
+  <p><%= minnpaku.please %></p>
+  <% end %>
+  <div style="border-bottom: 2px solid #2C3E50; margin: 3px 0px 6px 0px; border-radius: 5px 5px 5px 5px;"></div>
+  <% end %>
 </div>
 
 <div class="col-md-6">
 <div id="map"></div>
 <style type="text/css">
-  #map { height:700px; width: 600px}
+  #map { height:700px; width: 600px; border-radius: 5px;box-shadow: 0 2px 5px #ccc;}
   .leaflet-marker-icon-color-gray  { -webkit-filter: grayscale(100%); filter: grayscale(100%); }
   .leaflet-marker-icon-color-blue  { -webkit-filter: hue-rotate(-270deg); filter: hue-rotate(-9deg); }
 </style>

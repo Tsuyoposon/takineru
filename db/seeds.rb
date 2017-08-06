@@ -1,6 +1,7 @@
 Minnpaku.create(
 :id => 1,
 :name => "佐々木さんち",
+:body => "最安値",
 :image => Rails.root.join("db/fixtures/1.jpg").open,
 :price => 1000,
 :performance => 0,
@@ -14,6 +15,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 2,
 :name => "村田さんち",
+:body => "welcome to takzawa:)",
 :image => Rails.root.join("db/fixtures/2.jpg").open,
 :price => 3000,
 :performance => 0,
@@ -27,6 +29,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 3,
 :name => "小野さんち",
+:body => "airbnb経験者です",
 :image => Rails.root.join("db/fixtures/3.jpg").open,
 :price => 2500,
 :performance => 3,
@@ -40,6 +43,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 4,
 :name => "遠藤さんち",
+:body => "おいしい朝ごはんあります",
 :image => Rails.root.join("db/fixtures/4.jpg").open,
 :price => 5000,
 :performance => 1,
@@ -53,6 +57,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 5,
 :name => "関村さんち",
+:body => "お風呂大きいです",
 :image => Rails.root.join("db/fixtures/5.jpg").open,
 :price => 7000,
 :performance => 16,
@@ -66,6 +71,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 6,
 :name => "今野さんち",
+:body => "地元紹介します",
 :image => Rails.root.join("db/fixtures/6.jpg").open,
 :price => 4500,
 :performance => 6,
@@ -79,6 +85,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 7,
 :name => "村山さんち",
+:body => "外国人歓迎",
 :image => Rails.root.join("db/fixtures/7.png").open,
 :price => 3000,
 :performance => 22,
@@ -92,6 +99,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 8,
 :name => "伊藤さんち",
+:body => "送迎◎",
 :image => Rails.root.join("db/fixtures/8.png").open,
 :price => 5000,
 :performance => 7,
@@ -105,6 +113,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 9,
 :name => "佐藤さんち",
+:body => "初心者です",
 :image => Rails.root.join("db/fixtures/9.jpeg").open,
 :price => 6500,
 :performance => 0,
@@ -118,6 +127,7 @@ Minnpaku.create(
 Minnpaku.create(
 :id => 10,
 :name => "田口さんち",
+:body => "お酒好き歓迎",
 :image => Rails.root.join("db/fixtures/10.jpg").open,
 :price => 3000,
 :performance => 4,
@@ -168,7 +178,7 @@ LocalInfo.create(
 :name => "長内工房",
 :user_name => "今野",
 :body => "隠れたスポットです。",
-:image => Rails.root.join("db/fixtures/local_6.jpg").open
+:image => Rails.root.join("db/fixtures/local_6.jpeg").open
 )
 LocalInfo.create(
 :id => 7,

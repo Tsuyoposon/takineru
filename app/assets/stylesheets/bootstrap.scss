@@ -157,6 +157,16 @@ textarea {
   display: flex;
   justify-content: space-between;
 }
+.card2 {
+	padding: 15px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px #ccc;
+	pointer-events:none;
+	cursor:default;
+	text-decoration:none;
+	color:#000000;
+}
 .card {
 	width: 350px;
 	background: #fff;

@@ -25,10 +25,10 @@ class JimotalksController < ApplicationController
   # POST /jimotalks.json
   def create
     @jimotalk = Jimotalk.new(jimotalk_params)
-
+    @local_info = LocalInfo.find(@jimotalk.local_info_id)
     respond_to do |format|
       if @jimotalk.save
-        format.html { redirect_to @jimotalk, notice: 'Jimotalk was successfully created.' }
+        format.html { redirect_to @local_info, notice: 'Jimotalk was successfully created.' }
         format.json { render :show, status: :created, location: @jimotalk }
       else
         format.html { render :new }
