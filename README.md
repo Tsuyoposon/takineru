@@ -26,7 +26,7 @@ http://qiita.com/syachihoko/items/ea70ad95104c4782b6ee#-b-0000について
 - git
 - virtualbox
 ## 打つコマンド
-- git clone https://github.com/Tsuyoposon/rails-practice.git
+- git clone https://github.com/Tsuyoposon/takineru.git
 - cd takineru
 - vagrant up
 - vagrant ssh (vagrantで作ったcentosに入ります)
