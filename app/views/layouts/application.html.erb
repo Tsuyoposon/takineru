@@ -63,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand"href="/"><%= image_tag("/uploads/title/takineru-aikion.png", :style => "width: 200px;", :class => "aikon") %></a>
+          <a class="navbar-brand"href="/"><%= image_tag("https://takineru.s3-ap-northeast-1.amazonaws.com/title_image/takineru-aikion.png", :style => "width: 200px;", :class => "aikon") %></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -76,7 +76,7 @@
         </div>
         <% if @tutorial_flag.present? then %>
         <div style="text-align: center; padding: 20px;font-size: 25px;">
-          <%= image_tag("/uploads/title/takineru-aikion.png", :style => "width: 300px;") %>とは?
+          <%= image_tag("https://takineru.s3-ap-northeast-1.amazonaws.com/title_image/takineru-aikion.png", :style => "width: 300px;") %>とは?
         </div>
         <% end %>
       </div>

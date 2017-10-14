@@ -1,11 +1,10 @@
 # 画像をアップロードする際のルール（別ファイルにしておけば汎用的に使える。）
 class ImageUploader < CarrierWave::Uploader::Base
+
+  # リサイズしたり画像形式を変更するのに必要
+  include CarrierWave::RMagick
   # S3を使用するか？
-  if use_s3?
-    storage :fog
-  else
-    storage :file
-  end
+  storage :fog
 
   # S3やローカルの保存先。（以下の書式をそのまま書いておけば大抵問題無い）
   def store_dir
@@ -14,8 +13,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # 以下のようなことができる。
 
-  # リサイズしたり画像形式を変更するのに必要
-  include CarrierWave::RMagick
+
 
   # 画像を100x100にリサイズする。
   process :resize_to_fill => [490, 326]

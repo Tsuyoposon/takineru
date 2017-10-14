@@ -1,6 +1,6 @@
 
   <ul class="list-inline" align = "left" >
-<li><h1><%= image_tag("/uploads/title/20668866_1045676175568382_2083027003_n.jpg", :style => "width: 250px;") %></h1></li>
+<li><h1><%= image_tag("https://takineru.s3-ap-northeast-1.amazonaws.com/title_image/20668866_1045676175568382_2083027003_n.jpg", :style => "width: 250px;") %></h1></li>
 <li style="font-size: 17px;">滝沢市民やそこに行ったことのある人が知るイチオシを共有します</li>
   </ul>
 <div class="col-md-7">
@@ -8,7 +8,7 @@
   <% @local_infos.each do |local_info| %>
   <%= link_to(local_info, :style => "text-decoration:none;") do %>
   <ul class="list-inline" align = "left" >
-    <li><%= image_tag(local_info.image, :class => "card-img-show", :style => "width: 100px;display: inline-block;", :alt => "") %></li>
+    <li><%= image_tag(local_info.image.to_s, :class => "card-img-show", :style => "width: 100px;display: inline-block;", :alt => "") %></li>
     <li style="font-size: 22px; font-weight: bold;"><%= local_info.name %></li>
   </ul>
   <p><%= local_info.body %></p>
@@ -33,7 +33,7 @@
   <!-- カード -->
   <%= link_to(local_info, :style => "text-decoration:none;") do %>
   <section class="card" style="width: 180px; ">
-    <%= image_tag(local_info.image, :class => "card-img", :alt => "", :style => "") %>
+    <%= image_tag(local_info.image.to_s, :class => "card-img", :alt => "", :style => "") %>
   </section>
   <strong><%= local_info.name %></strong>
   <% end %>
