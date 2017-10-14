@@ -1,33 +1,38 @@
-# S3を使用しているかを判定するためのメソッド。（ローカル環境ではS3を使わないため）
-def use_s3?
-  ENV['AKIAIAPC7ACAZMJYKO7A'] &&
-  ENV['7I9B8JZG5Ogc+xLwVt2f/3Sa7BuCk4p7UF28jf2Z'] &&
-  ENV['ap-northeast-1'] &&
-  ENV['takineru']
-end
-
-## CarrierWaveの設定
 CarrierWave.configure do |config|
-  # S3の設定
-  if use_s3?
-    config.fog_credentials = {
-        :provider               => 'AWS',
-        :aws_access_key_id      => ENV['AKIAIAPC7ACAZMJYKO7A'],
-        :aws_secret_access_key  => ENV['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'],
-        :region                 => ENV['ap-northeast-1'],
-        # :host                   => '必要なら設定する'
-        # :endpoint               => '必要なら設定する'
-    }
+  config.fog_provider = 'fog/aws'
+  config.fog_credentials = {
+    provider:              'AWS',
+    # アクセスキー
+    aws_access_key_id:     'AKIAJHRL7VYYS6TDS7FQ',
+    # シークレットキー
+    aws_secret_access_key: 'K71cBZC14gwXmAP6ZRacpPqUhzqE2hc8UtFMpLKL',
+    # Tokyo
+    region:                'ap-northeast-1',
+  }
 
-    # S3のバケットを指定。
-    config.fog_directory     = ENV['takineru']
-    # 一般公開させて無いS3の場合は以下の設定を行う。
-    config.fog_public     = false
-    # 一般公開されていない場合は以下の設定をする事で60秒間有効なURLを発行してくれる。
-    config.fog_authenticated_url_expiration = 60
-    CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
+  # 公開・非公開の切り替え
+  config.fog_public     = true
+  # キャッシュの保存期間
+  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
+
+  # キャッシュをS3に保存
+  # config.cache_storage = :fog
+
+  # 環境ごとにS3のバケットを指定
+  case Rails.env
+    when 'production'
+      config.fog_directory = 'takineru'
+      config.asset_host = 'https://takineru.s3-ap-northeast-1.amazonaws.com'
+
+    when 'development'
+      config.fog_directory = 'dev-takineru'
+      config.asset_host = 'https://dev-takineru.s3-ap-northeast-1.amazonaws.com'
+
+    when 'test'
+      config.fog_directory = 'dev-takineru'
+      config.asset_host = 'https://dev-takineru.s3-ap-northeast-1.amazonaws.com'
   end
-
-  # public配下にキャッシュができると参照されてしまうので、予め変えておく。
-  config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
+
+# 日本語ファイル名の設定
+CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/

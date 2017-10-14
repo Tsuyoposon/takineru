@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 
 # carrywave画像アップロード機能
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'fog'
 gem 'rmagick', require: 'RMagick'
 
