@@ -1,7 +1,8 @@
 # takineru
 takizawa-hackathon.ver3で作成しました
 
-
+追記 2017/10/16
+- herokuにデプロイしましたhttps://takineru.herokuapp.com
 
 
 
